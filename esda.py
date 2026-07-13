@@ -44,3 +44,59 @@ def unesda(esdaout = [[2,15,14,10],[15,21,18,-64],[12,5,-64,13],[15,14,4,5]],y =
     
     return x
 
+def text_to_matrices(text):
+    
+    ascii_list = [ord(c) for c in text]
+    original_len = len(ascii_list)
+    
+    # 计算需要填充的个数（使总长度能被 16 整除）
+    pad = (16 - original_len % 16) % 16
+    ascii_list.extend([0] * pad)   # 用 0 填充
+    
+    matrices = []
+    for i in range(0, len(ascii_list), 16):
+        block = ascii_list[i:i+16]
+        # 按行优先组成 4x4 矩阵
+        mat = [
+            block[0:4],
+            block[4:8],
+            block[8:12],
+            block[12:16]
+        ]
+        matrices.append(mat)
+    
+    return matrices, original_len
+
+
+def matrices_to_text(matrices, original_len):
+    flat = []
+    for mat in matrices:
+        for row in mat:
+            flat.extend(row)
+    
+    # 截断到原始长度，去除填充
+    ascii_codes = flat[:original_len]
+    return ''.join(chr(c) for c in ascii_codes)
+
+# 加密
+def encrypt_text(plaintext, key_matrix):
+    mats, orig_len = text_to_matrices(plaintext)
+    encrypted_mats = []
+    for mat in mats:
+        encrypted_mats.append(esda(mat, key_matrix))
+    return encrypted_mats, orig_len
+
+# 解密
+def decrypt_text(encrypted_mats, orig_len, key_matrix):
+    decrypted_mats = []
+    for mat in encrypted_mats:
+        decrypted_mats.append(unesda(mat, key_matrix))
+    return matrices_to_text(decrypted_mats, orig_len)
+plain = input("请输入明文: ") 
+key = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]  # 示例密钥，实际应使用随机数
+
+cipher, length = encrypt_text(plain, key)
+print("密文矩阵:", cipher)
+
+recovered = decrypt_text(cipher, length, key)
+print("解密结果:", recovered)  # Attack at dawn!
