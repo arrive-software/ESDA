@@ -6,7 +6,6 @@
 #  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-# x = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
 def esda(x = [[15,21,18,-64],[12,5,-64,13],[15,14,4,5],[2,15,14,10]],y = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]):
     esdaout = [[0 for _ in range(4)] for _ in range(4)]
     z = [[0 for _ in range(4)] for _ in range(4)]
@@ -91,12 +90,4 @@ def decrypt_text(encrypted_mats, orig_len, key_matrix):
     decrypted_mats = []
     for mat in encrypted_mats:
         decrypted_mats.append(unesda(mat, key_matrix))
-    return matrices_to_text(decrypted_mats, orig_len)
-plain = input("请输入明文: ") 
-key = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]  # 示例密钥，实际应使用随机数
-
-cipher, length = encrypt_text(plain, key)
-print("密文矩阵:", cipher)
-
-recovered = decrypt_text(cipher, length, key)
-print("解密结果:", recovered)  # Attack at dawn!
+    return decrypted_mats, orig_len
