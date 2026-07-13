@@ -24,11 +24,6 @@ def esda(x = [[15,21,18,-64],[12,5,-64,13],[15,14,4,5],[2,15,14,10]],y = [[0,0,0
         for j in range(4):
             esdaout[i][j] = ASK[i][j] + dz[i][j]
 
-    # debug
-    # for i in range(4):
-        # for j in range(4):
-            # print(chr(esdaout[i][j]+96),end=" ")
-        # print("")
     return esdaout
 def unesda(esdaout = [[2,15,14,10],[15,21,18,-64],[12,5,-64,13],[15,14,4,5]],y = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]):
     x = [[0 for _ in range(4)] for _ in range(4)]
@@ -47,10 +42,5 @@ def unesda(esdaout = [[2,15,14,10],[15,21,18,-64],[12,5,-64,13],[15,14,4,5]],y =
         for j in range(4):
             x[i][j] = z[i][j] - y[i][j]
     
-    # debug
-    # for i in range(4):
-        # for j in range(4):
-            # print(chr(x[i][j]+96),end=" ")
-        # print("")
     return x
 
