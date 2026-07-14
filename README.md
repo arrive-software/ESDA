@@ -47,3 +47,7 @@ then return decrypted matrices.
 Interactively operate on the text file with the .esda extension, and read the first 16 characters from the key file as the key.
 
 Generate a file with the .ae extension.
+
+### web demo
+
+[esda demo](https://arrive-software.github.io/2026/07/14/esdademo/)
