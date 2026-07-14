@@ -43,3 +43,7 @@ This function takes three parameters:The first is encrypted matrices,the second 
 then return decrypted matrices.
 
 #### fileesda
+
+Interactively operate on the text file with the .esda extension, and read the first 16 characters from the key file as the key.
+
+Generate a file with the .ae extension.
