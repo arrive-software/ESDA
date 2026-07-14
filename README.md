@@ -33,3 +33,13 @@ This function returns a string.
 > encrypt_text()
 
 This function takes two parameters: the first parameter is a string that serves as the plaintext, and the second parameter is a 4×4 matrix that serves as the key.
+
+then return two value: The first is encrypted matrices and the second is the length of origin matrices.
+
+> decrypt_text()
+
+This function takes three parameters:The first is encrypted matrices,the second is the length of origin matrices and the final is the key matrix.
+
+then return decrypted matrices.
+
+#### fileesda
