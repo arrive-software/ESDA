@@ -5,3 +5,4 @@ ESDA (Easy Snake Descent Algorithm) is a simple symmetric encryption algorithm i
 ### The way to use  
 --- 
 #### esda
+Import esda as a module.ESDA provides four functions which include 

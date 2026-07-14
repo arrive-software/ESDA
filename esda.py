@@ -90,4 +90,4 @@ def decrypt_text(encrypted_mats, orig_len, key_matrix):
     decrypted_mats = []
     for mat in encrypted_mats:
         decrypted_mats.append(unesda(mat, key_matrix))
-    return decrypted_mats, orig_len
+    return decrypted_mats
