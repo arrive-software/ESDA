@@ -5,4 +5,23 @@ ESDA (Easy Snake Descent Algorithm) is a simple symmetric encryption algorithm i
 ### The way to use  
 --- 
 #### esda
-Import esda as a module.ESDA provides four functions which include 
+Import esda as a module.ESDA provides six functions which include esda() unesda() text_to_matrices() matrices_to_text() encrypt_text() decrypt_text().
+
+> esda()
+
+ESDA requires two 4×4 matrices as parameters (which are mandatory). The first one serves as the plaintext, and the second one serves as the key for the ESDA computation.  
+Then it output the encrypted matrix.
+
+> unesda()
+
+Similar to ESDA, the former is the encrypted matrix, and the latter is the key.
+
+Then it output the decrypted matrix.
+
+> text_to_matrices()
+
+Only one parameters(text of arbitrary length).
+
+This function outputs two values: the first is the input text converted to ASCII and then split into multiple 4×4 matrices, and the second is the number of matrices. (If the data is less than 16 elements, it is automatically padded with zeros.)
+
+> matrices_to_text()
