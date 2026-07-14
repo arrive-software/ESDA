@@ -25,3 +25,11 @@ Only one parameters(text of arbitrary length).
 This function outputs two values: the first is the input text converted to ASCII and then split into multiple 4×4 matrices, and the second is the number of matrices. (If the data is less than 16 elements, it is automatically padded with zeros.)
 
 > matrices_to_text()
+
+It requires two parameters.The first parameter is a matrice including one or more encrypted matrices.The second parameter is the length of origion matrix.
+
+This function returns a string.
+
+> encrypt_text()
+
+This function takes two parameters: the first parameter is a string that serves as the plaintext, and the second parameter is a 4×4 matrix that serves as the key.
